@@ -143,6 +143,7 @@ header#main-menu {
     background: #212121;
     display: flex;
     position: fixed;
+    z-index: 1000;
 }
 
 /* II. Header: Navigation */
@@ -151,6 +152,10 @@ header#main-menu nav {
     width: 100%;
     position: relative;
     align-items: center;
+}
+header#main-menu section.header-wrapper {
+    display: flex;
+    width: 100%;
 }
 header#main-menu {
     display: flex;
@@ -236,38 +241,31 @@ header#main-menu nav ul li.current::after {
 header#main-menu #right {
     display: flex;
 }
-#hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 10px;
-    width: 100%;
-}
-#hamburger span {
-    display: block;
-    height: 2px;
-    width: 30px;
-    background: #fff;
-}
-#hamburger span#line-2 {
-    margin: 7.5px 0px;
-}
 
 /* Language */
+
 header#main-menu #language {
     height: 100%;
     display: flex;
     color: #fff;
     align-items: center;
 }
+
 header#main-menu #currency {
     height: 100%;
     display: flex;
     color: #fff;
     align-items: center;
 }
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
 header#main-menu #lang {
+    cursor: pointer;
+    transition: 0.2s;
     height: 100%;
     color: #fff;
     background: #212121;
@@ -275,7 +273,20 @@ header#main-menu #lang {
     font-family: 'Poppins', sans-serif;
     border: none;
     font-size: 12px;
+    padding: 0px 15px;
+    border-radius: 0;
+    -webkit-outline: none;
+    outline: none;
 }
+header#main-menu #language #lang:hover {
+    background: #333;
+    transition: 0.2s;
+}
+option {
+    background: #fff;
+    padding: 10px 5px;
+}
+
 header#main-menu #curr {
     height: 100%;
     color: #fff;
@@ -284,6 +295,15 @@ header#main-menu #curr {
     font-family: 'Poppins', sans-serif;
     border: none;
     font-size: 12px;
+    border-radius: 0;
+    padding: 0 15px;
+    cursor: pointer;
+    -webkit-outline: none;
+    outline: none;
+}
+header#main-menu #curr:hover {
+    background: #333;
+    transition: 0.2s;
 }
 header#main-menu #call {
     display: flex;
@@ -317,18 +337,246 @@ header#main-menu #chat i {
     color: #fff;
     font-size: 14px;
 }
+
+/* Hamburger */
+
+#hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+#hamburger span {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background: #fff;
+    transition: 0.2s;
+}
+#hamburger span#line-2 {
+    margin: 7.5px 0px;
+}
+
+/* Hamburger :: Active */
+#hamburger.openNav span#line-1 {
+    transform: rotate(-45deg) translate(-6px, 9px);
+    transition: 0.2s;
+}
+#hamburger.openNav span#line-2 {
+    opacity: 0;
+    transition: 0.2s;
+}
+#hamburger.openNav span#line-3 {
+    transform: rotate(45deg) translate(-6px,-9px);
+    transition: 0.2s;
+}
+
+
+/* Main Index */
+
+/* Main#index - Landing */
+#landing {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#title {
+    position: relative;
+    height: 90vh;
+}
+#title-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 100%;
+}
+
+#title-wrapper h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+}
+
+#title-wrapper h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;;
+}
+
+#filter {
+    width: 100%;
+    padding-bottom: 70px;
+    bottom: 0;
+    position: absolute;
+}
+#filterFunction {
+    width: 100%;
+    max-width: 1080px;
+    background: #fff;
+    border-radius: 5px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+
+/* Main#index - About */
+section#about {
+    padding: 100px 0px;
+    background: url(../img/shutterstock_1019183941.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+section#about h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 42px;
+    text-transform: uppercase;
+    color: #444444;
+}
+section#about h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 100;
+    color: #444444;
+    font-size: 24px;
+    padding: 20px 0px;
+}
+section#about p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 100;
+    color: #444444;
+    padding: 10px 90px;
+}
+section#about div.flex {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+}
+section#about div.flex div {
+    text-align: center;
+    justify-content: center;
+    padding: 50px 25px;
+}
+section#about  div.flex div h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+/* Main#index - Featured Properties */
+
+section#featured-properties {
+    padding: 80px 0px;
+    background: #F5F5F5
+}
+section#featured-properties .container h1#featuredProperties {
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    font-weight: 600;
+    font-size: 30px;
+}
+section#featured-properties .container p#location {
+    font-family: "Montserrat", sans-serif;
+    color: #444;
+    font-weight: 100;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+section#featured-properties .property-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1160px;
+    position: relative;
+    height: 500px;
+}
+section#featured-properties .property-container button {
+    position: absolute;
+    top: 0;
+    width: 30;
+    height: 100%;
+    background: transparent;
+    border: none;
+}
+section#featured-properties .property-container button#carouselLeft {
+    left: 0%;
+    padding-right: 10px;
+}
+section#featured-properties .property-container button#carouselRight {
+    padding-left: 10px;
+    right: 0;
+}
+section#featured-properties .property-container .wrapper {
+    height: 100%;
+    padding: 10px 40px;
+    display: flex;
+}
+section#featured-properties .property-container button i {
+    font-size: 20px;
+}
+section#featured-properties .property-container .wrapper .property{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    background: #F5F5F5
+}
+section#featured-properties .property-container .wrapper .property .card{
+    height: 100%;
+    width: 100%;
+    max-width: 360px;
+    padding: 10px;
+}
+section#featured-properties .property-container .wrapper .property .card h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: right;
+    font-weight: 500;
+}
+section#featured-properties .property-container .wrapper .property .card h4 {
+    font-family: 'Montserat', sans-serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+
+
+
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    header#main-menu nav {
+@media only screen and (max-width: 1090px) {
+    header#main-menu section.header-wrapper {
         display: none;
+    }
+    header#main-menu section.header-wrapper.openNav {
+        display: flex;
+        height: 100vh;
+        background: #212121;
+        position: fixed;
+        flex-direction: column-reverse;
+    }
+    header#main-menu section.header-wrapper nav {
+        display: flex;
+        flex-direction: column;
     }
     header#main-menu #hamburger {
         display: flex;
     }
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    
-}
-/* /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
