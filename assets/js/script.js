@@ -28,7 +28,9 @@ $(document).ready(function(){
     // 
     $.getJSON("https://api.exchangerate-api.com/v4/latest/PHP", function(data){
         
-//        var php = parseFloat($(".prices").text());
+        
+        
+        var php = parseFloat($(".prices").text());
         var usd = data.rates.USD;
         var cny = data.rates.CNY;
         var krw = data.rates.KRW;

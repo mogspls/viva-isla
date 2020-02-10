@@ -136,7 +136,14 @@ II. Body
 @charset "utf-8";
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-
+.flex {
+    display: flex;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 /* II. Header */
 header#main-menu {
     width: 100%;
@@ -240,6 +247,9 @@ header#main-menu nav ul li.current::after {
 }
 header#main-menu #right {
     display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    flex-direction: row;
 }
 
 /* Language */
@@ -260,31 +270,46 @@ header#main-menu #currency {
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    text-indent: 1px;
     text-overflow: '';
+    display: flex;
+    padding: 10px;
+    text-align-last: center;
+    background: #212121;
+    height: 100%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    font-weight: 300;
+    transition: 0.2s;
+    border: none;
+}
+select:hover {
+    background: #333;
+    transition: 0.2s;
+    cursor: pointer;
 }
 header#main-menu #lang {
     cursor: pointer;
     transition: 0.2s;
     height: 100%;
     color: #fff;
-    background: #212121;
     font-weight: 300;
     font-family: 'Poppins', sans-serif;
     border: none;
     font-size: 12px;
-    padding: 0px 15px;
     border-radius: 0;
-    -webkit-outline: none;
     outline: none;
+    display: flex;
+    justify-content: center;
 }
 header#main-menu #language #lang:hover {
     background: #333;
     transition: 0.2s;
 }
 option {
-    background: #fff;
-    padding: 10px 5px;
+    background: #212121;
+    padding: 50px;
+    text-align: center;
 }
 
 header#main-menu #curr {
@@ -419,7 +444,7 @@ header#main-menu #chat i {
     background: #fff;
     border-radius: 5px;
     height: 50px;
-    margin: 0 auto;
+    margin: 25px auto;
 }
 
 
@@ -443,7 +468,7 @@ section#about h1 {
 section#about h3 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-weight: 100;
+    font-weight: 300;
     color: #444444;
     font-size: 24px;
     padding: 20px 0px;
@@ -451,7 +476,7 @@ section#about h3 {
 section#about p {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-weight: 100;
+    font-weight: 300;
     color: #444444;
     padding: 10px 90px;
 }
@@ -468,7 +493,7 @@ section#about div.flex div {
 }
 section#about  div.flex div h4 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 24px;
     text-align: center;
 }
@@ -558,10 +583,31 @@ section#featured-properties .property-container .wrapper .property .card h4 {
 
 
 
-
+/* Main#index - build-perfection */
+section#build-perfection {
+    display: flex;
+    margin: 25px 0px;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+section#build-perfection h1 {
+    font-weight: 500;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+section#build-perfection p {
+    font-weight: 300;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 1090px) {
+    .flex { flex-direction: column; }
+    header#main-menu #right {
+        flex: none;
+    }
     header#main-menu section.header-wrapper {
         display: none;
     }
@@ -573,6 +619,10 @@ section#featured-properties .property-container .wrapper .property .card h4 {
         flex-direction: column-reverse;
     }
     header#main-menu section.header-wrapper nav {
+        display: flex;
+        flex-direction: column;
+    }
+    header#main-menu nav .nav-wrapper ul{
         display: flex;
         flex-direction: column;
     }

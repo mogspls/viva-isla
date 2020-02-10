@@ -34,9 +34,9 @@
                 </div>
                 <a href="#search" id="search"><i class="fa fa-search"></i></a>
             </nav>
-            <div id="right" style="display: flex; flex: 1; justify-content: flex-end; flex-direction: row;">
+            <div id="right">
                 <div id="language">
-                    <img src="assets/img/icons/globe-solid.svg" alt="Language" style="height: 18px; padding: 3px">
+<!--                    <img src="assets/img/icons/globe-solid.svg" alt="Language" style="height: 18px; padding: 3px">-->
                     <select name="lang" id="lang">
                         <option value="en">English</option>
                         <option value="es">Español</option>
