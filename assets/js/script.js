@@ -10,6 +10,7 @@ $(document).ready(function(){
 //            $(this).html('After');
 //        });
     });
+    
     // Hamburger
     $('#hamburger').click(function(){
         // Open Navigation Panel on Mobile View
@@ -25,9 +26,8 @@ $(document).ready(function(){
         $("section#landing").attr("style", "background-image:" + "url(assets/img/" + landing.backgroundUrl) + "); background-attachment: fixed; background-position: center;";
     });
     
-    // 
+    // currency exchange
     $.getJSON("https://api.exchangerate-api.com/v4/latest/PHP", function(data){
-        
         
         
         var php = parseFloat($(".prices").text());
@@ -55,6 +55,33 @@ $(document).ready(function(){
                 $('.prices').text(php * aed);
             }
         });
-        
+    });
+    
+    // slick.js
+    
+    $('#listings').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
     });
 })

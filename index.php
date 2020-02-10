@@ -111,9 +111,14 @@
     </section>
     
     <!-- Our Listings -->
+<!--
     <section id="listings">
-        
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </section>
+-->
 </main>
 <?php
     include('layout/footer.php');

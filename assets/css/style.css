@@ -602,6 +602,24 @@ section#build-perfection p {
     font-weight: 300;
 }
 
+
+/* Main#index - Our Listings */
+section#listings {
+    height: 600px;
+    position: relative;
+}
+section#listings div {
+    background-color: #333;
+    margin: 5px;
+    width: 100%;
+}
+footer {
+    background: #212121;
+    height: 100%;
+    display: flex;
+}
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 1090px) {
     .flex { flex-direction: column; }
